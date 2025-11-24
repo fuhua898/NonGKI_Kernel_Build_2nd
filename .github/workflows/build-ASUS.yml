@@ -1,4 +1,4 @@
-name: Build Sample YAML
+name: Build ASUS ROG5
 
 on:
   workflow_call:
@@ -6,14 +6,14 @@ on:
 
 env:
   # Device env
-  DEVICE_NAME : "device_name"
-  DEVICE_CODENAME : "device_codename"
+  DEVICE_NAME : "ZS673KS"
+  DEVICE_CODENAME : "ROG ZS673KS"
 
   CUSTOM_CMDS : "CLANG_TRIPLE=aarch64-linux-gnu-"
   EXTRA_CMDS : "LD=ld.lld LLVM=1 LLVM_IAS=1"
 
-  KERNEL_SOURCE : "https://github.com/kernel_author/android_kernel_codename.git"
-  KERNEL_BRANCH : "system_os"
+  KERNEL_SOURCE : "https://github.com/freak07/Kirisakura_ANAKIN_ROG5.git"
+  KERNEL_BRANCH : "master_caf_5"
 
   CLANG_SOURCE : "https://github.com/llvm/llvm-project/releases/download/llvmorg-19.1.7/LLVM-19.1.7-Linux-X64.tar.xz"
   CLANG_BRANCH : ""
@@ -25,29 +25,29 @@ env:
   GCC_32_BRANCH : "android12L-release"
 
   DEFCONFIG_SOURCE: ""
-  DEFCONFIG_NAME : "codename_defconfig"
+  DEFCONFIG_NAME : "kirisakura_defconfig"
   DEFCONFIG_ORIGIN_IMAGE: ""
   DEFCONFIG_FROM_BOOT: false
 
   KERNELSU_SOURCE : "https://raw.githubusercontent.com/tiann/KernelSU/refs/heads/main/kernel/setup.sh"
   KERNELSU_BRANCH : "v0.9.5"
 
-  KERNELSU_AUTO_GET : "false" # if u want easy setting kernelsu, u can true.
-  KERNELSU_AUTO_FORK : "" # magic, rsuntk, next, wild, jingmatrix and sukisu
+  KERNELSU_AUTO_GET : "true" # if u want easy setting kernelsu, u can true.
+  KERNELSU_AUTO_FORK : "sukisu" # magic, rsuntk, next, wild, jingmatrix and sukisu
 
-  SUSFS_ENABLE : false
-  SUSFS_FIXED : false
-  SUSFS_UPDATE : false
+  SUSFS_ENABLE : true
+  SUSFS_FIXED : true
+  SUSFS_UPDATE : true
 
   AK3_SOURCE : "https://github.com/osm0sis/AnyKernel3.git"
   AK3_BRANCH : "master"
 
   BOOT_SOURCE : ""
 
-  NEED_DTBO : false
-  NEED_SAFE_DTBO : false
+  NEED_DTBO : true
+  NEED_SAFE_DTBO : true
 
-  ROM_TEXT : "rom_android"
+  ROM_TEXT : "ASUS_ROG5"
 
   # Other env
   PYTHON_VERSION: "3" # Only 2(Ubuntu 22.04 and Ubuntu 20.04) or 3(Any OS Versions).
@@ -56,8 +56,8 @@ env:
 
   KERNELSU_METHOD: "shell" # shell, manual and only.
 
-  PATCHES_SOURCE: "author/source" # [your_name]/[your_patch] -> gooder123/NonGKI_Patcher
-  PATCHES_BRANCH: "branch" # [your_branch] -> main
+  PATCHES_SOURCE: "fuhua898/NonGKI_Kernel_Build_2nd" # [your_name]/[your_patch] -> gooder123/NonGKI_Patcher
+  PATCHES_BRANCH: "freak07" # [your_branch] -> main
 
   SUSFS_FOLDER_FIXED: "" # Fill in your patch prefix directory here. Leave it blank if there isn't one. -> your_folder
   SUSFS_155_FIXED: "" # Fill in your patches here. If there are multiple patches, please separate them with a comma. Leave it blank if there isn't one. -> patch1,patch2 (Only v1.5.5 SuSFS)
@@ -80,8 +80,8 @@ env:
   GENERATE_DTB: "false" # if u kernel need DTB , but cannot auto generate it. (Only Anykernel3).
   GENERATE_CHIP: "qcom" # only supported for qcom and mediatek.
 
-  BUILD_DEBUGGER: "false" # Output build errors.
-  SKIP_PATCH: "false" # Ignore errors found in Patch Debugger.
+  BUILD_DEBUGGER: "true" # Output build errors.
+  SKIP_PATCH: "true" # Ignore errors found in Patch Debugger.
 
   BUILD_OTHER_CONFIG: "false" # Merge config files.
   MERGE_CONFIG_FILES: "vendor/debugfs.config,vendor/lahaina_QGKI.config"
