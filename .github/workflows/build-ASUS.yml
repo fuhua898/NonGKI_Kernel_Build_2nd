@@ -56,11 +56,11 @@ env:
 
   KERNELSU_METHOD: "shell" # shell, manual and only.
 
-  PATCHES_SOURCE: "fuhua898/NonGKI_Kernel_Build_2nd" # [your_name]/[your_patch] -> gooder123/NonGKI_Patcher
-  PATCHES_BRANCH: "freak07" # [your_branch] -> main
+  PATCHES_SOURCE: "fuhua898/NonGKI_Kernel_Patches" # [your_name]/[your_patch] -> gooder123/NonGKI_Patcher
+  PATCHES_BRANCH: "rog5" # [your_branch] -> main
 
-  SUSFS_FOLDER_FIXED: "" # Fill in your patch prefix directory here. Leave it blank if there isn't one. -> your_folder
-  SUSFS_155_FIXED: "" # Fill in your patches here. If there are multiple patches, please separate them with a comma. Leave it blank if there isn't one. -> patch1,patch2 (Only v1.5.5 SuSFS)
+  SUSFS_FOLDER_FIXED: "ROG5" # Fill in your patch prefix directory here. Leave it blank if there isn't one. -> your_folder
+  SUSFS_155_FIXED: "susfs_1.5.5_fixed" # Fill in your patches here. If there are multiple patches, please separate them with a comma. Leave it blank if there isn't one. -> patch1,patch2 (Only v1.5.5 SuSFS)
   SUSFS_151X_FIXED: "" # Fill in your patches here. If there are multiple patches, please separate them with a comma. Leave it blank if there isn't one. -> patch1,patch2 (Only v1.5.1X SuSFS)
   SUSFS_LATEST_FIXED: "" # Fill in your patches here. If there are multiple patches, please separate them with a comma. Leave it blank if there isn't one. -> patch1,patch2
 
